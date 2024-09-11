@@ -58,7 +58,7 @@ if uploaded_file_pacientes and uploaded_file_tratamientos:
 
     if st.button('Guardar en la base de datos'):
         try:
-            insert_data_to_db(df_combinado, 'nombre_de_tu_tabla')  # Cambia 'nombre_de_tu_tabla' por el nombre real de tu tabla
+            insert_data_to_db(df_combinado, 'mi_base_de_datos')
             st.success('Datos guardados exitosamente en la base de datos.')
         except Exception as e:
             st.error(f"Error al guardar los datos: {e}")
