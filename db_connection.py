@@ -2,16 +2,13 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 
-# Cargar las variables de entorno
 load_dotenv()
 
-# Acceder a las variables de entorno definidas en el archivo .env
 db_user = os.getenv('DB_USER')
 db_password = os.getenv('DB_PASSWORD')
 db_host = os.getenv('DB_HOST')
 db_name = os.getenv('DB_NAME')
 
-# Función para conectar a la base de datos
 def connect_to_database():
     try:
         connection = mysql.connector.connect(
@@ -25,7 +22,6 @@ def connect_to_database():
     except mysql.connector.Error as e:
         raise Exception(f"Error al conectar a MySQL: {e}")
 
-# Función para insertar datos en la base de datos
 def insert_data_to_db(df, table_name):
     connection = connect_to_database()
     if connection:
